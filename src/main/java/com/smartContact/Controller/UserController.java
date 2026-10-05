@@ -53,5 +53,10 @@ public class UserController {
         return userService.getUserNameByName(name);
     }
 
+    @GetMapping("/get_user_data/email/{email}")
+    public User fetchUserByEmail(@PathVariable("email") String email) throws UserNotFoundException {
+        return userService.fetchUserByEmail(email);
+    }
+
 
 }

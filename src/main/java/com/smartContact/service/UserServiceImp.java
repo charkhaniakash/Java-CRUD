@@ -48,11 +48,12 @@ public class UserServiceImp implements UserService {
         return userDao.findByName(name);
         }
 
-
+    @Override
+    public User fetchUserByEmail(String email) throws UserNotFoundException {
+        Optional<User> user = userDao.findByEmail(email);
+        if (!user.isPresent()) {
+            throw new UserNotFoundException("User not found with email: " + email);
+        }
+        return user.get();
     }
-
-
-
-
-
-
+}
