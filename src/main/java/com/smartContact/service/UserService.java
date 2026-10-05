@@ -20,4 +20,6 @@ public interface UserService {
    public void updateUser(int id, User user);
 
   public User getUserNameByName(String name);
+
+  public User getUserByEmail(String email);
 }
