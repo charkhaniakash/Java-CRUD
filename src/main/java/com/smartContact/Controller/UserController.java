@@ -35,6 +35,11 @@ public class UserController {
         return userService.fetchUserById(id);
     }
 
+    @GetMapping("/get_user_by_email/{email}")
+    public User fetchUserByEmail(@PathVariable("email") String email) throws UserNotFoundException {
+        return userService.fetchUserByEmail(email);
+    }
+
     @DeleteMapping("/delete_user_data/{id}")
     public ResponseEntity<String>deleteUser(@PathVariable("id") int id){
         userService.deleteUser(id);
