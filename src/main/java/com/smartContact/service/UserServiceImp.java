@@ -44,15 +44,13 @@ public class UserServiceImp implements UserService {
         userDao.save(user);
 
     }
+    @Override
     public User getUserNameByName(String name){
         return userDao.findByName(name);
-        }
-
-
     }
 
-
-
-
-
-
+    @Override
+    public User getUserByEmail(String email) {
+        return userDao.findByEmail(email);
+    }
+}
